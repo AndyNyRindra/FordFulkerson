@@ -1,4 +1,4 @@
-from pulp import LpMaximize, LpProblem, LpVariable, LpInteger, PULP_CBC_CMD, LpStatus
+from pulp import LpMaximize, LpMinimize, LpProblem, LpVariable, LpInteger, PULP_CBC_CMD, LpStatus
 
 # Définir le problème
 problem = LpProblem("Maximisation_Exemple", LpMaximize)
