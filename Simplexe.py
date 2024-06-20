@@ -1,4 +1,5 @@
 from pulp import LpMaximize, LpMinimize, LpProblem, LpVariable, LpInteger, PULP_CBC_CMD, LpStatus
+from fractions import Fraction
 
 # Définir le problème
 problem = LpProblem("Maximisation_Exemple", LpMaximize)
@@ -27,10 +28,10 @@ problem.solve()
 
 # Afficher les résultats
 print(f"Status: {problem.status}, {LpStatus[problem.status]}")
-print(f"x1 = {x1.varValue}")
-print(f"x2 = {x2.varValue}")
-print(f"x3 = {x3.varValue}")
-print(f"x4 = {x4.varValue}")
-print(f"x5 = {x5.varValue}")
-print(f"x6 = {x6.varValue}")
-print(f"Valeur de la fonction objectif = {problem.objective.value()}")
+print(f"x1 = {Fraction(x1.varValue).limit_denominator()}")
+print(f"x2 = {Fraction(x2.varValue).limit_denominator()}")
+print(f"x3 = {Fraction(x3.varValue).limit_denominator()}")
+print(f"x4 = {Fraction(x4.varValue).limit_denominator()}")
+print(f"x5 = {Fraction(x5.varValue).limit_denominator()}")
+print(f"x6 = {Fraction(x6.varValue).limit_denominator()}")
+print(f"Valeur de la fonction objectif = {Fraction(problem.objective.value()).limit_denominator()}")
