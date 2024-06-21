@@ -6,12 +6,21 @@ problem = LpProblem("Maximisation_Exemple", LpMaximize)
 
 # Définir les variables de décision (variables en nombres entiers)
 # x1 = LpVariable('x1', lowBound=0, cat=LpInteger)
+
 x1 = LpVariable('x1', lowBound=0)
 x2 = LpVariable('x2', lowBound=0)
 x3 = LpVariable('x3', lowBound=0)
 x4 = LpVariable('x4', lowBound=0)
 x5 = LpVariable('x5', lowBound=0)
 x6 = LpVariable('x6', lowBound=0)
+
+# PLNE
+# x1 = LpVariable('x1', lowBound=0, cat=LpInteger)
+# x2 = LpVariable('x2', lowBound=0, cat=LpInteger)
+# x3 = LpVariable('x3', lowBound=0, cat=LpInteger)
+# x4 = LpVariable('x4', lowBound=0, cat=LpInteger)
+# x5 = LpVariable('x5', lowBound=0, cat=LpInteger)
+# x6 = LpVariable('x6', lowBound=0, cat=LpInteger)
 
 # Définir la fonction objective
 problem += 40 * x1 + 10 * x2 + 0 * x3 + 0 * x4 + 7 * x5 + 14* x6, "Fonction_Objet"
